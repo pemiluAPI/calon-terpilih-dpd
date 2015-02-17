@@ -5,8 +5,11 @@
 
     RewriteEngine On
 
+    # For subdirectory app
+    RewriteBase /calon-dpd
+
     # Redirect Trailing Slashes...
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    #RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
