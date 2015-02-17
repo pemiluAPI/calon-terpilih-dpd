@@ -13,5 +13,12 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return Redirect::to('api/candidates');
+});
+
+Route::pattern('id', '[0-9]+');
+
+App::missing(function($exception)
+{
+	return XApi::response(array('error'=>400, 'results'=>null), 400);
 });
