@@ -2,12 +2,13 @@
 
 class XApi
 {
-	public static function response($data = array('error' => 0, 'results' => null), $http_code = 200)
+	public static function response($data = array('error' => 0, 'results' => null, 'message' => null), $http_code = 200)
 	{
 		return Response::json(
 			array(
 				'error' =>   $data['error'],
-				'results' => empty($data['results']) ? NULL : $data['results'],
+				'message' => empty($data['message']) ? '' : $data['message'],
+				'results' => empty($data['results']) ? NULL : $data['results']
 			),
 			$http_code);
 	}
