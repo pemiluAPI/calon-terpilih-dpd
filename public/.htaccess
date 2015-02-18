@@ -6,7 +6,7 @@
     RewriteEngine On
 
     # For subdirectory app
-    RewriteBase /calon-dpd
+    RewriteBase /calon_dpd
 
     # Redirect Trailing Slashes...
     #RewriteRule ^(.*)/$ /$1 [L,R=301]
