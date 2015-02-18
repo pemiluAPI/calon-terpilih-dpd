@@ -42,9 +42,14 @@ class Candidate extends \Eloquent
 			->get();
 	}
 
-	public function allPostsPaged($limit=100, $offset=0)
+	public function allCandidatesPaged($limit=100, $offset=0, $params=array('province'=>null))
 	{
 		$query = DB::table($this->table);
+
+		if (!empty($params['province']))
+		{
+			$query = $query->where('provinces.id', '=', $params['province']);
+		}
 
 		$query = $query
 			->join('provinces', 'candidates.provinsi_id', '=', 'provinces.id')

@@ -13,8 +13,12 @@ class CandidateController extends BaseController {
 	{
 		$limit = Input::get('limit', 100);
 		$offset = Input::get('offset', 0);
+		$params = array();
+		$params['province'] = Input::get('province', 0);
+		// return $params;
+		// die();
 
-		return XApi::parser( $this->candidate->allPostsPaged($limit, $offset) );
+		return XApi::parser( $this->candidate->allCandidatesPaged($limit, $offset, $params) );
 	}
 
 }
