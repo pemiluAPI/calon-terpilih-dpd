@@ -2,16 +2,15 @@
 
 class ProvinceController extends BaseController {
 
-	protected $province;
+    protected $province;
 
-	public function __construct(Province $province)
-	{
-		$this->province = $province;
-	}
+    public function __construct(Province $province)
+    {
+        $this->province = $province;
+    }
 
-	public function getAll()
-	{
-		return XApi::parser( $this->province->allProvinces() );
-	}
-
+    public function getAll()
+    {
+        return XApi::parser($this->province->allProvinces());
+    }
 }

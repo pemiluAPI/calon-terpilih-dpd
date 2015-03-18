@@ -11,26 +11,26 @@
 |
 */
 
-Route::get('/', function()
-{
-	return Redirect::to('api/candidates');
+Route::get('/', function() {
+
+    return Redirect::to('api/candidates');
 });
 
 Route::pattern('id', '[0-9]+');
 
-Route::group(array('prefix' => 'api/candidates'), function()
-{
-	Route::get('/', array('uses' => 'CandidateController@getAll'));
+Route::group(array('prefix' => 'api/candidates'), function() {
+
+    Route::get('/', array('uses' => 'CandidateController@getAll'));
 
 });
 
-Route::group(array('prefix' => 'api/provinces'), function()
-{
-	Route::get('/', array('uses' => 'ProvinceController@getAll'));
+Route::group(array('prefix' => 'api/provinces'), function() {
+
+    Route::get('/', array('uses' => 'ProvinceController@getAll'));
 
 });
 
-App::missing(function($exception)
-{
-	return XApi::response(array('error'=>400, 'results'=>null), 400);
+App::missing(function($exception) {
+
+    return XApi::response(array('error'=>400, 'results'=>null), 400);
 });
